@@ -11,8 +11,8 @@ if __name__ == '__main__':
     ppub.set_address('Eisenbahnstraße 18B Hanau')
     ppub.set_property_type(PropertyType.apartment)
     ppub.set_marketing_type(MarketingType.rent)
-    k = UrlBuilder(ppub).build()
-    r = requests.get(k)
+    url = UrlBuilder(ppub).build()
+    r = requests.get(url)
     obj = r.json()
 
     print(obj['property']['price'])
